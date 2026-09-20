@@ -5,6 +5,23 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+author:
+  name: Sonya Castro
+  description: Backend Developer @ tyba | Systems Engineer | AWS  Developer
+  photo: null
+  contact:
+    - name: Location
+      value: Barranquilla, Colombia
+      icon: location
+    - name: Github
+      value: sonya-c
+      icon: github
+      url: github.com/sonya-c
+    - name: Linkedin
+      value: sonya-castro
+      icon: linkedin
+      url: https://www.linkedin.com/in/sonya-castro/
+
 sass:
   quiet_deps: true
   silence_deprecations: [import]

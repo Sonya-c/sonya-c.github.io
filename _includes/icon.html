@@ -1,0 +1,22 @@
+<span class="icon">
+  {% if include.url %}
+  <a rel="me" href="{{ social.url }}" target="_blank" title="{{ social.name }}">
+    <img
+      class="icon-img"
+      src="https://placehold.net/400x400.png"
+      alt="{{ include.icon }}"
+    />
+
+    <!--  -->
+    <span>{{ include.value }}</span>
+  </a>
+  {% else %}
+  <img
+    class="icon-img"
+    src="https://placehold.net/400x400.png"
+    alt="{{ include.icon }}"
+  />
+  <span>{{ include.value }}</span>
+  <!--  -->
+  {% endif %}
+</span>

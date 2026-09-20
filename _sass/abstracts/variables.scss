@@ -1,3 +1,10 @@
+$breakpoints: (
+  breakpoint-phone: "only screen and (width <= 40rem)",
+  breakpoint-tablet: "only screen and (width >= 40rem)",
+  breakpoint-laptop: "only screen and (width >= 64rem)",
+);
+
 :root {
   --font-primary: system-ui, sans-serif;
+  --font-weight: lighter;
 }

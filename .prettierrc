@@ -1,0 +1,6 @@
+{
+  "singleAttributePerLine": false,
+  "useTabs": false,
+  "tabWidth": 2,
+  "htmlWhitespaceSensitivity": "strict"
+}
