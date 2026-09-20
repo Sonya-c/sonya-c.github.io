@@ -2,13 +2,11 @@
   <div class="profile-banner-image-container">
     {% assign profile_photo = site.author.photo %}
 
-    <!--Validate image  -->
-    {% if profile_photo == nil or profile_photo == "" or profile_photo == empty
-    or profile_photo == blank %}
-    <!-- Use placeholer image as callback -->
-    {% assign profile_photo = "https://placehold.net/400x400.png" %}
-    <!--Validate image  -->
+    <!-- Validate image. If not give, use placeholder -->
+    {% if profile_photo == null or profile_photo == '' or profile_photo == empty or profile_photo == blank %}
+      {% assign profile_photo = 'https://placehold.net/400x400.png' %}
     {% endif %}
+
     <img
       src="{{ profile_photo }}"
       alt="{{ site.author.name }}"
@@ -17,17 +15,19 @@
   </div>
   <div class="profile-banner-info-container">
     <div class="profile-banner-summary-container">
-      <h1>{{ site.author.name}}</h1>
+      <h1>{{ site.author.name }}</h1>
       <p>{{ site.author.description }}</p>
-      <p> {% include icon.html icon="location" value=site.author.location%} </p>
+      <p> {% include icon.html icon="location" value=site.author.location %} </p>
     </div>
     <div class="profile-banner-contact-info">
       <ul>
         {%- for contact in site.author.contact -%}
-        <li>
-          {% include icon.html icon=contact.icon value=contact.value
-          url=contact.url %}
-        </li>
+          <li>
+            {%
+              include icon.html icon=contact.icon value=contact.value
+              url=contact.url
+            %}
+          </li>
         {%- endfor -%}
       </ul>
     </div>
