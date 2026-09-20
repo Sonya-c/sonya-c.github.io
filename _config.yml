@@ -3,6 +3,7 @@ description: Backend Developer @ tyba | Systems Engineer | AWS Developer
 url: ""
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 sass:
   quiet_deps: true
