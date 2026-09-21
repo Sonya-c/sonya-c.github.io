@@ -8,7 +8,8 @@
     "start:detached": "bundle exec jekyll serve --detach",
     "build": "bundle exec jekyll build",
     "pa11y:home": "pa11y-ci http://127.0.0.1:4000",
-    "pa11y:sitemap": "pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml --sitemap-find https://accessibility.civicactions.com --sitemap-replace http://127.0.0.1:4000 --sitemap-exclude \"/*.pdf\""
+    "pa11y:sitemap": "pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml --sitemap-find https://accessibility.civicactions.com --sitemap-replace http://127.0.0.1:4000 --sitemap-exclude \"/*.pdf\"",
+    "lint:sass": "stylelint \"**/*.scss\""
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,8 @@
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.11.0",
     "pa11y-ci": "^4.1.1",
-    "prettier": "^3.9.8"
+    "prettier": "^3.9.8",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard-scss": "^17.0.0"
   }
 }
