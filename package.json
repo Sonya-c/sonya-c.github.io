@@ -5,7 +5,7 @@
   "scripts": {
     "start": "bundle exec jekyll serve --trace",
     "start:livereload": "bundle exec jekyll serve --livereload",
-    "start:detached": "bundle exec jekyll serve --detached",
+    "start:detached": "bundle exec jekyll serve --detach",
     "build": "bundle exec jekyll build",
     "pa11y:home": "pa11y-ci http://127.0.0.1:4000",
     "pa11y:sitemap": "pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml --sitemap-find https://accessibility.civicactions.com --sitemap-replace http://127.0.0.1:4000 --sitemap-exclude \"/*.pdf\""
