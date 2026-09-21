@@ -1,0 +1,92 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/functions.scss" as *;
+
+.profile-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(breakpoint-phone) {
+    flex-direction: column;
+
+    .profile-banner-image-container img {
+      width: 100%;
+      height: 100%;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    .profile-banner-info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(breakpoint-tablet) {
+    display: flex;
+    flex-direction: row;
+
+    .profile-banner-image-container img {
+      width: 130px;
+      height: 130px;
+    }
+
+    .profile-banner-info-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // TODO: Improve - I got bored
+  max-width: 64rem;
+  gap: 38px;
+
+  .profile-banner-summary-container {
+    h1 {
+      font-size: xx-large;
+      padding: 38px 0px 10px 0px;
+      font-weight: 350;
+    }
+
+    p {
+      padding-bottom: 10px;
+      color: #555555;
+    }
+
+    .profile-banner-summary-description {
+      font-size: large;
+    }
+  }
+
+  .profile-banner-social-networks {
+    margin-top: 15px;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      font-size: medium;
+      gap: 10px;
+
+      .icon {
+        transition:
+          border,
+          color,
+          background-color 0.5s;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        display: inline-block;
+        color: #555555;
+      }
+
+      .icon:hover {
+        color: black;
+        border-color: #aaa;
+        background-color: #eee;
+      }
+    }
+  }
+}

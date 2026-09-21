@@ -2,8 +2,8 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     <title>
-      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{
-      site.description }}
+      {% if page.title %}{{ page.title }} – {% endif -%}
+      {{- site.name }} – {{ site.description }}
     </title>
 
     <link
@@ -11,11 +11,12 @@
       type="text/css"
       href="{{ site.baseurl }}/assets/styles.css"
     />
+    <link href="{{ site.baseurl }}/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="{{ site.baseurl }}/assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="{{ site.baseurl }}/assets/fontawesome/css/solid.css" rel="stylesheet" />
   </head>
 
   <body>
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">{{ content }}</div>
-    </main>
+    {{ content }}
   </body>
 </html>

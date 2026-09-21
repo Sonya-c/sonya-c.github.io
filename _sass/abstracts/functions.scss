@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+@mixin breakpoint($key) {
+  $condition: map-get($breakpoints, $key);
+
+  @if ($condition) {
+    @media #{$condition} {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $media_queries';
+  }
+}

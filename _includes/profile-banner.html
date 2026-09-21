@@ -1,0 +1,27 @@
+<div class="profile-banner">
+  <div class="profile-banner-image-container">
+    {% assign profile_photo = site.data.author.photo %}
+
+    <img
+      src="{{ site.baseurl }}/assets/img/{{ profile_photo }}"
+      alt="{{ site.data.author.name }}"
+      class="rounded"
+    />
+  </div>
+  <div class="profile-banner-info-container">
+    <div class="profile-banner-summary-container">
+      <h1>{{ site.data.author.name }}</h1>
+      <p class="profile-banner-summary-description">{{ site.data.author.description }}</p>
+      <p> {% include icon.html icon="location" value=site.data.author.location %} </p>
+    </div>
+    <div class="profile-banner-social-networks">
+      <ul>
+        {%- for social_network in site.data.author.social_networks -%}
+          <li>
+            {% include icon.html icon=social_network.icon url=social_network.url name=social_network.name %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>

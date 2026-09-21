@@ -1,6 +1,4 @@
 ---
-layout: base
+layout: home
 title: Hello, world!
 ---
-
-# Hi
