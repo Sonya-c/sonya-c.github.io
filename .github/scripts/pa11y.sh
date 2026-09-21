@@ -2,7 +2,7 @@
 
 set -u
 
-output=$(npm run pa11y-ci:sitemap 2>&1)
+output=$(npm run pa11y:sitemap 2>&1)
 npm_status=$?
 
 printf '%s\n' "$output"
