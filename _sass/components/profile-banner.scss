@@ -8,6 +8,7 @@
 
   @include breakpoint(breakpoint-phone) {
     flex-direction: column;
+    padding: 10px;
 
     .profile-banner-image-container img {
       width: 100%;
@@ -42,7 +43,11 @@
 
   // TODO: Improve - I got bored
   max-width: 64rem;
-  gap: 38px;
+  gap: 0px;
+
+  @include breakpoint(breakpoint-tablet) {
+    gap: 38px;
+  }
 
   .profile-banner-summary-container {
     h1 {
@@ -58,6 +63,7 @@
 
     .profile-banner-summary-description {
       font-size: large;
+      line-height: 1.5;
     }
   }
 
