@@ -1,20 +1,13 @@
 @use "../abstracts/variables.scss" as *;
 @use "../abstracts/functions.scss" as *;
-@use "../utilities/flexbox.scss" as *;
 
 .profile-banner {
-  padding: 48px;
-  padding: 48px;
-  border-bottom: 1px solid darkgray;
-  max-width: 64rem;
-  margin: auto;
-  @include flex-container-align(
-    $vertical-align: center,
-    $horizontal-align: center
-  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include breakpoint(breakpoint-phone) {
-    @include flex-container(column, 38px);
+    flex-direction: column;
 
     .profile-banner-image-container img {
       width: 100%;
@@ -24,17 +17,17 @@
     }
 
     .profile-banner-info-container {
-      @include flex-container(column, 10px);
-      @include flex-container-align(
-        $vertical-align: center,
-        $horizontal-align: center
-      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
   }
 
   @include breakpoint(breakpoint-tablet) {
-    @include flex-container(row, 38px);
+    display: flex;
+    flex-direction: row;
 
     .profile-banner-image-container img {
       width: 130px;
@@ -42,11 +35,57 @@
     }
 
     .profile-banner-info-container {
-      @include flex-container(column, 10px);
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
-      .profile-banner-contact-info ul {
-        @include flex-container(row, 10px);
-        font-size: smaller;
+  // TODO: Improve - I got bored
+  max-width: 64rem;
+  gap: 38px;
+
+  .profile-banner-summary-container {
+    h1 {
+      font-size: xx-large;
+      padding: 38px 0px 10px 0px;
+      font-weight: 350;
+    }
+
+    p {
+      padding-bottom: 10px;
+      color: #555555;
+    }
+
+    .profile-banner-summary-description {
+      font-size: large;
+    }
+  }
+
+  .profile-banner-social-networks {
+    margin-top: 15px;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      font-size: medium;
+      gap: 10px;
+
+      .icon {
+        transition:
+          border,
+          color,
+          background-color 0.5s;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        display: inline-block;
+        color: #555555;
+      }
+
+      .icon:hover {
+        color: black;
+        border-color: #aaa;
+        background-color: #eee;
       }
     }
   }

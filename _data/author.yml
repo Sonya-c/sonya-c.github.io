@@ -1,6 +1,6 @@
 name: Sonya Castro
 description: Backend Developer @ tyba | Systems Engineer | AWS  Developer
-photo: null
+photo: profile-photo.jpg
 location: Barranquilla, Colombia
 social_networks:
   - name: Github
@@ -14,3 +14,4 @@ social_networks:
   - name: Email
     value: sonya.castro.gomez@gmail.com
     icon: envelope
+    url: mailto:sonya.castro.gomez@gmail.com

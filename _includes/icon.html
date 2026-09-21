@@ -1,11 +1,15 @@
-<span class="icon">
-  {% if include.url %}
-    <a rel="me" href="{{ social.url }}" target="_blank" title="{{ social.name }}">
-      <i class="{{ site.data.icons[include.icon] | join: ' ' }}"></i>
-      <span>{{ include.value }}</span>
-    </a>
-  {% else %}
+{% if include.url %}
+  <a rel="me" href="{{ include.url }}" target="_blank" title="{{ include.name }}" class="icon">
     <i class="{{ site.data.icons[include.icon] | join: ' ' }}"></i>
-    <span>{{ include.value }}</span>
-  {% endif %}
-</span>
+    {% if include.value %}
+      <span>{{ include.value }}</span>
+    {% endif %}
+  </a>
+{% else %}
+  <span class="icon">
+    <i class="{{ site.data.icons[include.icon] | join: ' ' }}"></i>
+    {% if include.value %}
+      <span>{{ include.value }}</span>
+    {% endif %}
+  </span>
+{% endif %}
