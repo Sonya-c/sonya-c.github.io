@@ -8,13 +8,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
         with:
           bundler-cache: true
           cache-version: 0
-      - name: Install pa11y-ci dependencies.
-        run: npm install
+
+      - name: Install npm dependencies
+        run: cd .. & npm install
 
   checks:
     name: Accessibility Checks
