@@ -1,0 +1,33 @@
+name: Pull request checks
+
+on: [pull_request]
+
+jobs:
+  checks:
+    name: Accessibility Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        with:
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Start up Jekyll server
+        run: npm run start:detached
+
+      - name: Run pa11y-ci
+        run: sh .github/scripts/pa11y.sh
