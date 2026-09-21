@@ -1,6 +1,6 @@
 <div class="profile-banner">
   <div class="profile-banner-image-container">
-    {% assign profile_photo = site.author.photo %}
+    {% assign profile_photo = site.data.author.photo %}
 
     <!-- Validate image. If not give, use placeholder -->
     {% if profile_photo == null or profile_photo == '' or profile_photo == empty or profile_photo == blank %}
@@ -9,23 +9,23 @@
 
     <img
       src="{{ profile_photo }}"
-      alt="{{ site.author.name }}"
+      alt="{{ site.data.author.name }}"
       class="rounded"
     />
   </div>
   <div class="profile-banner-info-container">
     <div class="profile-banner-summary-container">
-      <h1>{{ site.author.name }}</h1>
-      <p>{{ site.author.description }}</p>
-      <p> {% include icon.html icon="location" value=site.author.location %} </p>
+      <h1>{{ site.data.author.name }}</h1>
+      <p>{{ site.data.author.description }}</p>
+      <p> {% include icon.html icon="location" value=site.data.author.location %} </p>
     </div>
     <div class="profile-banner-contact-info">
       <ul>
-        {%- for contact in site.author.contact -%}
+        {%- for social_network in site.data.author.social_networks -%}
           <li>
             {%
-              include icon.html icon=contact.icon value=contact.value
-              url=contact.url
+              include icon.html icon=social_network.icon value=social_network.value
+              url=social_network.url
             %}
           </li>
         {%- endfor -%}
